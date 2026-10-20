@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse fictional internship opportunities across technology domains.">
+  <title>Internship Board — Find your next opportunity</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to internship listings</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#" aria-label="Launchpad Internship Board home">
+        <span class="brand-mark" aria-hidden="true">↗</span><span>launchpad<span class="brand-dot">.</span></span>
+      </a>
+      <span class="header-note">Your next chapter starts here</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> OPPORTUNITIES FOR WHAT'S NEXT</p>
+        <h1 id="hero-title">Start small.<br><span>Build something big.</span></h1>
+        <p class="hero-copy">Explore beginner-friendly internships, discover your domain, and take the next step in your career.</p>
+        <div class="hero-stats" aria-label="Board overview">
+          <div><strong id="total-count">12</strong><span>opportunities</span></div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div><strong>6</strong><span>career domains</span></div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div><strong>100%</strong><span>beginner friendly</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="art-card art-card-back"><span class="mini-icon purple">✳</span><span class="skeleton long"></span><span class="skeleton short"></span></div>
+        <div class="art-card art-card-front"><span class="mini-icon mint">↗</span><span class="art-label">YOUR FUTURE</span><strong>In progress.</strong><div class="progress-track"><span></span></div><span class="art-foot">Keep learning, keep growing.</span></div>
+        <div class="floating-star star-one">✦</div><div class="floating-star star-two">✳</div>
+      </div>
+    </section>
+
+    <section class="listing-section" aria-labelledby="listing-title">
+      <div class="section-heading">
+        <div><p class="eyebrow muted">THE OPPORTUNITY BOARD</p><h2 id="listing-title">Find your fit<span>.</span></h2></div>
+        <p class="results-summary" id="results-summary" aria-live="polite">Showing 12 opportunities</p>
+      </div>
+
+      <form class="filters" id="filter-form" role="search">
+        <div class="search-field">
+          <label for="search-input">Search internships</label>
+          <div class="input-wrap"><span aria-hidden="true" class="search-icon">⌕</span>
+            <input id="search-input" name="search" type="search" placeholder="Try “frontend” or “remote”" autocomplete="off">
+            <button type="button" id="clear-search" class="clear-search" aria-label="Clear search" hidden>×</button>
+          </div>
+        </div>
+        <div class="domain-field">
+          <label for="domain-filter">Career domain</label>
+          <select id="domain-filter" name="domain">
+            <option value="all">All domains</option>
+            <option value="Full Stack Development">Full Stack Development</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Data & Analytics">Data &amp; Analytics</option>
+            <option value="UI/UX Design">UI/UX Design</option>
+            <option value="AI & Machine Learning">AI &amp; Machine Learning</option>
+            <option value="Cybersecurity">Cybersecurity</option>
+          </select>
+        </div>
+        <button class="reset-button" type="reset">Reset filters</button>
+      </form>
+
+      <div id="error-state" class="state-panel error-panel" role="alert" hidden>
+        <span class="state-icon">!</span><div><h3>We couldn't load the listings</h3><p>Please refresh the page or try again.</p></div>
+        <button type="button" id="retry-button" class="secondary-button">Try again</button>
+      </div>
+      <div id="empty-state" class="state-panel" role="status" hidden>
+        <span class="empty-illustration" aria-hidden="true">⌕</span><h3>No internships found</h3>
+        <p>Try a different keyword or choose another domain.</p><button type="button" id="empty-reset" class="secondary-button">Clear filters</button>
+      </div>
+      <div id="internship-grid" class="internship-grid" aria-label="Internship listings"></div>
+      <p class="disclaimer">Portfolio demo · All internship listings shown here are fictional sample data, not live vacancies.</p>
+    </section>
+
+    <section class="bottom-cta" aria-label="Career encouragement">
+      <div class="cta-icon" aria-hidden="true">✦</div>
+      <div><h2>Your first opportunity is a starting point.</h2><p>Keep exploring. Keep building. Your future self will thank you.</p></div>
+      <a href="#main" class="cta-link">Explore roles <span aria-hidden="true">↑</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">↗</span><span>launchpad<span class="brand-dot">.</span></span></a><p>Designed for curious minds and future builders.</p><span>© 2026 Launchpad · Student portfolio project</span></footer>
+
+  <template id="internship-template">
+    <article class="internship-card">
+      <div class="card-top"><span class="company-icon" aria-hidden="true"></span><span class="tag"></span></div>
+      <h3 class="role-title"></h3><p class="company-name"></p>
+      <div class="card-meta"><span class="location"></span><span class="duration"></span></div>
+      <div class="card-bottom"><span class="stipend"></span><a class="details-link" href="#project-note">View details <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </template>
+  <p id="project-note" class="sr-only">This is a demonstration board. Contact details and application links are not provided because the listings are fictional.</p>
+</body>
+</html>
